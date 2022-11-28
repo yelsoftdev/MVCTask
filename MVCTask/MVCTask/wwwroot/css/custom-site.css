@@ -63,6 +63,10 @@
     overflow-y: auto;
 }
 
+.selected-stock-item {
+    background-color: rgba(0,0,0,.075);
+}
+
 .card-result {
     display: flex;
     justify-content: left;

@@ -35,13 +35,14 @@ $(".btn-add-sub").click(function () {
 
 // Store items click event //
 $(".tbl-body-items tr").click(function () {
-    
+    $(".tbl-body-items tr").removeClass('selected-stock-item');
+    $(this).addClass('selected-stock-item');
     let imgSrc = $(this).children('td').children('img').attr('src');
     let itemName = $(this).children('#tdItemName').text();
     let priceVal = $(this).children('#item_price').val();
     $('#imgItemPreview').attr('src', imgSrc);
     $('#spanItemName').text(itemName);
-    $('#spanItemTotal').text(priceVal);
+    $('#spanItemTotal').text(": " + priceVal);
 });
 
 // Card full name and number text boxes keyup event //
