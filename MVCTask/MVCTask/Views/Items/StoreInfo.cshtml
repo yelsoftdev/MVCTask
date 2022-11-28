@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MVCTask.Models.StoreItemViewModel>
+
+@{
+    ViewData["Title"] = "Store Items";
+}
+
+<h3>Store Items</h3>
+
+<div class="col-md-12 form-group">
+    <div class="row">
+        <div class="col-md-8 pl-0 div-stock-items">
+            <br />
+            <table class="table table-hover tbl-items">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.sNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.itemName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.imageSrc)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tbl-body-items">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.sNo)
+                            </td>
+                            <td id="tdItemName">
+                                @Html.DisplayFor(modelItem => item.itemName)
+                            </td>
+                            <td>
+                                <img src="@Html.DisplayFor(modelItem => item.imageSrc)" style="height:30px;" />
+                            </td>
+                            @Html.HiddenFor(modelItem => item.price)
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4 div-item-img-preview-align" id="divItemPreview">
+            <div class="div-item-img-preview text-center">
+                <img id="imgItemPreview" src="~/images/Fan.png" style="height:250px;" />
+                <div class="">
+                    <span id="spanItemName"></span>
+                    <span>:</span>
+                    <span class="item-total" id="spanItemTotal"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,214 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Task 1 -->
+<div class="col-md-12 pt-2 pb-3 div-task-1 form-group">
+    <div class="task-header">
+        <p>
+            1. Write a program that displays a button in green color and it should change into yellow when the mouse moves over it.
+        </p>
+    </div>
+    <div class="task-1-body">
+        <button type="button" class="btn btn-bg-green" id="btnTestButton">Test Button</button>
+    </div>
+</div>
+
+<!-- Task 2 -->
+<div class="col-md-12 pt-2 div-task-2 form-group">
+    <div class="task-header">
+        <p>
+            2. Create a component that receives two numbers from the user through a Web Form, and based on the user’s selection it adds or subtracts the two numbers and returns the result to the Web Form. The result should be displayed in the Web Form.
+        </p>
+    </div>
+    <div class="row task-2-body">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="lblFirstNumber">First number <span class="mandatory">*</span></label>
+                <input type="number" class="form-control txt-add-sub" id="txtFirstNumber" placeholder="Enter first number">
+            </div>
+            <div class="form-group">
+                <label for="lblSecondNumber">Second number <span class="mandatory">*</span></label>
+                <input type="number" class="form-control txt-add-sub" id="txtSecondNumber" placeholder="Enter second number">
+            </div>
+        </div>
+        <div class="col-md-2 pt-5">
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-primary btn-add-sub" id="btnAddition">Add</button>
+            </div>
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-warning btn-add-sub" id="btnSubtraction">Subtract</button>
+            </div>
+        </div>
+        <div class="col-md-7 result-align">
+            <div class="text-left">
+                <span>The result is : </span>
+                <span class="result-value" id="spanResult">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Task 3 -->
+<div class="col-md-12 pt-2 div-task-3 form-group">
+    <div class="task-header">
+        <p>
+            3. Write a program containing the following controls: a ListBox, a Button, an Image, a Label. The listbox is used to list items available in a store. When the user clicks on an item in the listbox, its image is displayed in the image control. When the user clicks the button, the cost of the selected item is displayed in the control.
+        </p>
+    </div>
+    <div class="task-3-body">
+        @Html.ActionLink("Go to Stock Items", "StoreInfo", "Items")
+    </div>
+</div>
+
+<!-- Task 4 -->
+<div class="col-md-12 pt-2 div-task-4 form-group">
+    <div class="task-header">
+        <p>
+            4. Write a program that gets user input such as the user name, mode of payment, appropriate credit card. After the user enters the appropriate values the Validation button validates the values entered.
+        </p>
+    </div>
+    <div class="row task-4-body">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="lblFullName">Full name <span class="mandatory">*</span></label>
+                <input type="text" class="form-control txt-card" id="txtCardFullName" placeholder="Enter full name" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="lblCardNumber">Card number <span class="mandatory">*</span></label>
+                <input type="text" class="form-control txt-card" id="txtCardNumber" placeholder="Enter card number" maxlength="16" onkeypress="return event.charCode > 47 && event.charCode < 58;">
+                <div class="card-note">
+                    <small class="color-green">Note:</small>
+                    <small class="color-green">To validate a Visa card starting with 4 and maximum length 16 digits</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 pt-5">
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-primary" id="btnCardValidate">Validate</button>
+            </div>
+        </div>
+        <div class="col-md-7 card-result">
+            <div class="text-left">
+                <span>The result is : </span>
+                <span class="result-value" id="spanCardResult"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Task 5 -->
+<div class="col-md-12 pt-2 div-task-5 form-group">
+    <div class="task-header">
+        <p>
+            5. Create a Form that receives the user name, address, date, nationality, country preferred for working and skill sets from the user and stores the user name in the client using cookies. The country preferred data should appear in a dropdown list whereas, others should be entered in a textbox. Validate all the controls. The Form is named "formexp.aspx". The date should appear between "1/1/1900"" and "1/1/2090".
+        </p>
+    </div>
+    <div class="row task-5-body">
+        <div class="col-md-2 pt-2">
+            <div class="form-group text-left">
+                <span>Hello </span>
+                <span id="spanCreatedUserName" style="font-weight: bold;"></span>
+            </div>
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-secondary" id="btnUserModal">Create a new user</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="userModal">
+    <div class="modal-dialog" style="max-width: 60% !important;">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">User</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Name <span class="mandatory">*</span></label>
+                            <input type="text" class="form-control txt-user" id="txtUserName" placeholder="Please type here" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Address <span class="mandatory">*</span></label>
+                            <textarea class="form-control txt-user" id="taUserAddress" rows="3" placeholder="Please type here" maxlength="500"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Nationality <span class="mandatory">*</span></label>
+                            <input type="text" class="form-control txt-user" id="txtUserNationality" placeholder="Please type here" maxlength="100">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Date of birth <span class="mandatory">*</span></label>
+                            <input type="date" class="form-control txt-user" id="txtUserDOB" placeholder="Please select date" min="1901-01-01" max="2090-01-01">
+                        </div>
+                        <div class="form-group">
+                            <label>Skills <span class="mandatory">*</span></label>
+                            <textarea class="form-control txt-user" id="taUserSkills" rows="3" placeholder="Please type here" maxlength="500"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Country <span class="mandatory">*</span></label>
+                            <select class="form-control ddl-user" id="ddlUserCountry">
+                                <option value="">Please select</option>
+                                <option value="1">India</option>
+                                <option value="2">Australia</option>
+                                <option value="3">Russia</option>
+                                <option value="-1">Other</option>
+                            </select>
+                            <input type="text" class="form-control txt-user mt-3" id="txtUserCountry" placeholder="Please type here" maxlength="100" style="display:none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnUserCreation">Create</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Task 6 -->
+<div class="col-md-12 pt-2 div-task-6 form-group">
+    <div class="task-header">
+        <p>6. Create a .Net MVC application which has a single UI screen , in which User enters 9 digit number and upon clikcing on a button , User should see the number with unique digits in it.</p>
+        <p>Ex: If user enters 568978455 , Output is - 568974</p>
+        <p>If the user enters 456789123 , Output is - 456789123</p>
+        <p>If the user enters 999999999, Output is - 9</p>
+    </div>
+    <div class="row task-6-body pt-2">
+        <div class="col-md-3">
+            <div class="form-group">
+                <input type="text" class="form-control" id="txtNineDigitsNo" placeholder="Enter 9 digits number" maxlength="9" onkeypress="return event.charCode > 47 && event.charCode < 58;">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" id="btnCheck">Check</button>
+                <div class="nine-digits-result">
+                    <span>Output : </span>
+                    <span class="" id="spanNineDigitsNoResult"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Task 7 -->
+<div class="col-md-12 pt-2 div-task-3 form-group">
+    <div class="task-header">
+        <p>
+            7. Create a Radio Button List that displays the names of some flowers in two columns. Bind a label to the Radio Button List so that when the user selects an option from the list and clicks on a button, the label displays the flower selected by the user.
+        </p>
+    </div>
+    <div class="task-3-body">
+        @Html.ActionLink("Go to View Flowers", "FlowersInfo", "Items")
+    </div>
+</div>

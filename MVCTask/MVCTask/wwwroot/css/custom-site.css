@@ -1,0 +1,78 @@
+﻿
+.btn-bg-green {
+    background-color: lightgreen;
+}
+
+.btn-bg-yellow {
+    background-color: yellow;
+}
+
+#btnTestButton:hover {
+    background-color: yellow !important;
+}
+
+.div-task-1, .div-task-3, .div-task-5, .div-task-7 {
+    background-color: beige;
+}
+.div-task-2, .div-task-4, .div-task-6 {
+    background-color: aliceblue;
+    border: 1px solid #ecfbf9;
+}
+
+.task-header{
+    text-align: left;
+}
+
+.task-1-body, .task-3-body, .task-5-body, .task-7-body {
+    text-align: center;
+    background-color: #ffc8000d;
+}
+.task-2-body, .task-4-body, .task-6-body {
+    background-color: #f8fcff;
+}
+
+.result-align {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.result-value {
+    font-weight: bold;
+}
+
+.tbl-items {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tbl-body-items {
+    cursor: pointer;
+}
+
+.div-item-img-preview {
+    width: 100%;
+}
+.div-item-img-preview-align {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.div-stock-items {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.card-result {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.mandatory {
+    color: red;
+}
+.color-green {
+    color: green;
+}
+
